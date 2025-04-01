@@ -1,0 +1,111 @@
+
+
+
+
+
+** video section 4 in the course describes steps to install things and get ready the virtual box.  
+
+
+
+VB Guide:  REF:  https://www.virtualbox.org/manual/ch01.html  
+
+ 
+install vb
+
+install ubuntu
+
+check python
+
+chekc and install pip  ** 
+
+install jupyter (using pip)
+
+check by running a notenbook. 
+
+
+** to update ability to install pip and other things.  
+" sudo apt-get update "  -  to update the "apt-get" mechanism. 
+then install java " sudo apt-get install default-jre " and then install scala  " sudo apt-get install scala ". 
+
+
+** install pip3  -  " sudo apt install python3-pip "
+
+pip3 install jupyter
+
+
+
+** Connect to ec2 from vindows using putty explained in section 5.2 of course. 
+
+
+to make sure private key file is not publicly viewable. 
+change mod -  " chmod 400 keyname.pem "   
+
+** dependency: spark < needs scala < needs java. 
+
+
+install py4j library    " pip3 install py4j "
+
+install spark: 
+
+connect - " wget http://archive.apache.org/dist/spark/spark-2.1.1/spark-2.1.1-bin-hadoop2.7.tgz "   {change version number if needed}
+unzip -  " sudo tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz "    {tab - autocomplete to get full correct file name }
+
+
+" pip3 install findspark "    <= to connect python with spark. 
+
+
+
+** pwd - print working directory. 
+** mkdir - make directory
+** chmod - 
+
+section 5.4 is imp. 
+
+
+generate the jupyter notebook config.py file. 
+
+create a certs directory 
+
+
+then:: 
+" sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout myceret.pem "  
+
+can skip the prompts for info after. 
+
+edit the config file next. : " cd ~/.jupyter/ "      then " vi jupyt.....py  "   {tab - to get correct filename}     to enter into actual py file. 
+
+press "i" to start inserting things into the py file.  
+  - add the things into the file. 
+
+hit 'escape' to get out of insert mode. 
+" :wq! " to write the entered info to the jupyter config file that we were in.  
+
+come back to home directory:   " cd "
+run  " jupyter notebook "
+
+for the url : 
+in putty: just highlighting the text will copy and pastes it into the clipboard. no copy or rt click option. 
+
+in the url:  
+replace the 'localhost' with actual aws dns address.  
+
+==>>> and that will have jupyter running on the aws
+
+in a new notebook. connect python with spark by using the filepath saved from before using findspark:  " findspark.init(<file_paath>) " 
+then can import pyspark like normal.
+ 
+   
+
+
+
+
+
+ 
+
+ 
+
+
+
+ 
+
+

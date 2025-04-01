@@ -1,0 +1,168 @@
+
+
+** For TCP in VPC, use NLB.  For all other use cases in VPC, use ALB. 
+ 
+
+
+** All 4 LBs User guides available from aws. 
+
+
+
+* LBs COMPARISION:  https://aws.amazon.com/elasticloadbalancing/features/#Product_comparisons 
+
+* HTTP default port is 80. 
+
+## Classic ELB: 
+===============
+
+
+* ELB - distributes traffic and does continous healthchecks. 
+
+
+
+
+
+
+
+
+* within VPC all instances can talk to each other. (across subnets)
+
+* ELB should always be accessed using DNS and not IP. 
+
+* Caution while defining health checks and do check the status of instances. 
+ 
+* Per the well-known OSI model, load balancers generally run at Layer 4 (transport) or Layer 7 (application).
+
+
+
+* Cross-zone Load balancing: 
+
+
+
+Launch VPC -> Launch subnets -> Launch ELB -> REGISTER instances to ELB
+
+
+Classic elb Video REF: https://youtu.be/txTPrM5proQ  
+
+AWS Reference (old): https://aws.amazon.com/blogs/aws/new-application-load-balancing-via-ip-address-to-aws-on-premises-resources/ 
+
+Create CLB REF: https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html 
+
+
+
+
+
+------------------------------------------------------------------
+
+
+## Application Load Balancer (ALB):
+====================================
+
+
+Create ALB REF (old): https://aws.amazon.com/blogs/aws/new-aws-application-load-balancer/
+
+Video Ref: https://youtu.be/OKnd03nxu3k 
+AWS ALB Video Ref (also covers creating Target Group): https://lrs.aws.training/defaultui/launch.aspx?configuration=&package=sialbx_en_v1_1.0.0&registration=TranscriptId|9pl7Oc_0nE6e9dFu8idJ3w2!UserId|esZ3P1pCzUewzgDSuJ77nA2!SaveCompletion|1!PackageId|sialbx_en_v1_1.0.0!CompletionThresholdPercent|80!RegistrationTimestampTicks|16099504641112278&auth=637457267755003960-U-l3ioxIehR5_IeG4Q_mLnV5qrWxXn_sGWlP-34fMWHwp_vSGAFJJx54J9tpYh2I0M5MuEi1snkaY_h2wdx7Unc99-AdpOJPGHwNlPKdcslbhOlKETB2WE0evspv9DB7cBn-kOhL0evlbVfAWzPuT12RrCehhBZAu1bBN5f_oZfimV0aJ4qIG8Es1tQvzkSzcpuF1KnvfWnbvmUaq-mhw30ZpY9OGMN1BPPyMYbBwVi_X2u13FgW91HfjbujxUcu-QRVwvSX5R21YG3cO6LAndiNiE4LEEW2d34JH8EL29PRsQedtmAHli2ik5_ei3EZ6I36PI4HfkC39H-G1xs-ZQ2&cc=en-US&redirectOnExitUrl=https:%2f%2fwww.aws.training%2fDetails%2fVideo%3fid%3d16454 
+
+Create Target Group and LB:- REF: https://youtu.be/OKnd03nxu3k?t=552  [at 9 min]
+
+
+* A Layer 7 load balancer is more sophisticated and more powerful. It inspects packets, has access to HTTP and HTTPS headers, and 
+	(armed with more information) can do a more intelligent job of spreading the load out to the target.
+
+* Web sites and mobile apps, running in containers or on EC2 instances, will benefit from the use of Application Load Balancers.
+
+* ALB one instance to host several Containers that listen on multiple ports behind the same target group and also performs fine-grained, 
+	port-level health checks.
+
+* LISTENER: A listener checks for connection requests from clients, using the protocol and port that you configure. The rules that you define for 
+	a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, 
+	and one or more conditions. When the conditions for a rule are met, then its actions are performed. You must define a default rule for each 
+	listener, and you can optionally define additional rules.   
+
+* TARGET GROUP: Each target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and port number that 
+	you specify. You can register a target with multiple target groups. You can configure health checks on a per target group basis. Health 
+	checks are performed on all targets registered to a target group that is specified in a listener rule for your load balancer.
+
+
+* Kepp LB in Public subnet and targets in Private subnet. 
+
+* here we write rules based on which the incomming request can go to a specific Target Group. 
+
+* After creating Target Group, you have to REGISTER an instance/something to the TG. 
+
+* Once you create the ALB, go to listeners in the LB go to view/edit rules to add new rules. 
+
+* A-record / DNS is the URL available in LB (for the application).
+
+* Routing has to be configured while creating an ALB (which needs to create and use Target Groups).
+
+* REGISTER THE TARGET: means telling the LB what instance you want that port to be hit.  
+
+
+DOCS Ref: 
+ - Theory: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html 
+ - ***Doc to create: https://aws.amazon.com/blogs/aws/new-aws-application-load-balancer/
+ - ALB detailed Components: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html 
+ - Application Load Balancing via IP Address: https://aws.amazon.com/blogs/aws/new-application-load-balancing-via-ip-address-to-aws-on-premises-resources/ 
+
+
+
+
+-------------------------------------------------------------------------------------
+
+## Creating Target Groups: 
+===========================
+
+Create a Target group (Screeshot taken).  Then register the instance as a target for the Target Group. 
+Then go to ALB and verify in "Listeners" that the new port is set up there. Change the default action 
+for the new port as it points to the one created with LB in "view/edit rules". Edit the "THEN" section and forward t to new TG.  
+
+* The scope of Target Group is at VPC level. 
+
+* For a particular listner, it can go to one target group. . 
+
+--------------------------------------------------------------------------
+
+
+## Network Load Balancer (NLB): 
+=================================
+
+
+Video Ref: https://youtu.be/WRUA370p7jE?list=PLTyrc6mz8dg8grU1HEhVw4zoCyvAl5MBO 
+
+
+* Before registering Targets in LB, nneed to put instance inside the Target. 
+
+* have to check if Target status is Healthy, before accessig dns.
+
+* no Security group picked in NLB ? 
+
+* have to define rules for inbound in the Security group and can't do it at NLB
+
+* content-of-URL based classification/logic/distribute the trafic not possible on NLB. only based on port is possible here.
+
+
+
+
+LISTENERS: 
+==========
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+

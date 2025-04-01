@@ -1,0 +1,122 @@
+
+
+
+
+
+
+## SPARK:  Spark and Python for Big Data with PySpark  
+===========================================================
+
+
+Spark – a big data technology, a data processing framework. Address all limitations of MapReduce.
+
+All types data processing of Hadoop can be done in spark. 
+
+** Its spark vs MapReduce (not Hadoop, really) 
+
+
+
+
+
+TOPICS to learn: 
+
+
+Spark and Big data basics:
+
+
+
+# Distributed systems:  - more than one systems with a master node. (unlike local with limited core and, 1 unit ram and storage)
+-------------------
+- can access computational resources across a no. of machines connected through a network. 
+- much easier to scale out. (than scale up a single machine.)  
+- include fault tolerance. 
+ 
+
+# BIG DATA: 
+---------
+- process data over a disttributed network of machines. 
+- provides scale up and fault tolerance.  
+
+
+# Hadoop: 
+-------
+"HDFS": Hadoop distributed File System.
+
+# MapReduce: - Allows computation on the HDFS data. - Hadoop uses it.  
+----------
+
+# Hadoop Ecosystem:
+-----------------
+
+ 
+
+# SPARK Intro: 
+------------
+
+- It does not have its own file system like Hadoop HDFS, it supports most of all popular file systems.
+- Can use Hadoop Distributed File System (HDFS), HBase, Cassandra, Amazon S3, Amazon Redshift, Couchbase, etc.
+- It runs programs up to 100x faster than Hadoop MapReduce in memory, or 10x faster on disk.
+- considered a Flexible alternative to MapReduce.
+- don't require the files to be stored in HDFS (unlike Hadoop). 
+- *A Framework for dealing with big (large) data, on distributed systems. 
+ 
+ 
+
+# Spark v MapReduce:
+--------------------
+- MapReduce requires files to be stored in HDFS, Spark does not.
+- Spark also can perform operations up to 100x faster than MapReduce.
+- MapReduce writes most data to disk after each map and reduce operation.
+- Spark keeps most of the data in memory after each transformation. 
+- Spark can spill over to disk if the memory is filled. 
+
+
+# Spark RDDs (Resilient Distributed Dataset):
+-------------
+- RDD has 4 main features: 1) Distributed Collection of Data, 2) Fault-tolerant, 3) Parallel operation - partioned, 
+	4) Ability to use many data sources. 
+- Resilient Distributed Dataset (RDDs) are immutable, lazily evaluated, and cacheable. 
+- 
+
+- There are two types of Spark operations: 1) Transformations, 2) Actions.
+- 'Transformations' are basically a recipe to follow. 'Actions' actually perform what the recipe says to do and returns something back.
+- Similarly, a lot of times you will write a "method" call, but won’t see anything as a result until you call the "action".
+- **With the release of Spark 2.0, Spark is moving towards a DataFrame based syntax, but keep in mind that the way 
+	files are being distributed can still be thought of as RDDs, it is just the typed out syntax that is changing. 
+
+
+# Spark DataFrames:
+------------------
+- *With the release of Spark 2.0, Spark is moving towards a 'DataFrame' based syntax.
+- DataFrame is like pandas DF, excel sheets, with columns and rows. 
+- 
+ 
+
+======================================================================
+
+- Spark SQL, DataFrames and Datasets Guide: https://spark.apache.org/docs/latest/sql-programming-guide.html
+- Machine Learning Library (MLlib) Guide: https://spark.apache.org/docs/latest/ml-guide.html 
+
+
+# PySpark:  - an API of Apache Spark-distributed processing system. 
+--------
+
+
+Spark setup
+
+
+
+ML in big data. 
+
+Spark Streaming 
+
+
+
+
+
+
+
+
+
+
+

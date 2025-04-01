@@ -1,0 +1,234 @@
+
+
+
+
+
+
+** Good Analogy: Waiter at a restaurant is like an API. We only interact with him/her to get everything while being shielded from the inner processings. 
+
+
+** API helps to: Access Data, Hide Complexity, Extend Functionality, and Security.   
+
+
+* INTRO VIDEO:  https://youtu.be/OVvTv9Hy91Q
+ 
+
+============================================================================================
+=============================================================================================
+
+
+### Full Course:"APIs for Beginners - to USE an api".  REF:-  https://youtu.be/GZvSYJDk-us 
+#----------------------------------------------------
+
+
+-- * NOTES: https://github.com/craigsdennis/intro-to-apis-course/blob/master/course-notes.md 
+
+
+#=> Video course Summary Notes:
+------------------------------
+
+- INTERFACES (apI): abstract away the Implementation. 
+  
+- UI for User, API for Application Programmer. 
+- Developer:- is Application Programmer. 
+
+
+# Remote APIs:
+ (and the struggle to reach Representational State Transfer API - REST )
+
+* Rest of course is focuses on API written in REST style. 
+
+---------------
+# How Web Works: (nice primer) :- https://www.youtube.com/watch?v=GZvSYJDk-us&t=1024s 
+
+- GET: only asking for info. Making/sending no changes. 
+- POST:  submitting or posting data to the server. 
+- HTTP: protocol to transfer 'Hyper Text (HTML)'. 
+	originally was 'stateless' protocol. => Once Request receives back a Response, its all done. 
+- query string parameters in the urls is: the stuff after '?' (in address bar). 
+	another way to pass this info is through key and value pairs called 'Headers'. Both Request and Response have headers.
+	An eg. of response header is the 'Status Code' and its code value. 
+-  REST sits on top of all these concepts. 
+
+
+---------------
+# RESTful API   Constraint Scavenger Hunt 
+
+- 'Constraints list' required for an API to be RESTful. 
+- Includes Statelessness. Means server doesn't remember anything. 
+- Almost everything we wanna build can be expressed in terms of 'resource' or 'collection'.
+- the most we want 'application' to do to the 'resources' is - CRUD. 
+- the return from server to a request is in JSON format. 
+- 
+ 
+
+
+-------------------
+# Explore an online API
+
+- try out the spotify API on the web. 
+- good REF: https://www.programmableweb.com/category-api 
+- good REF:  https://apilist.fun/ 
+
+
+
+
+
+-----------------------------
+# Using an API from the command line
+
+- try with twilio API. 
+- use CMD to interact with an API. (using CURL)
+
+
+
+-----------------------------------------
+# Using Postman to explore APIs 
+
+-  Install and try the cURL command (twilio) in the postman with setting up Auth. vars. 
+- 
+
+
+
+-----------------------------------------------
+# Please please Mr. Postman (using POST requests)
+
+- send emojo and gif to a msg on phone, using POST. 
+- try to explore cacheing by putting If-Modifed header in request. 
+
+- Official Postman Tutorials  :-  REF: https://www.postman.com/webinars/ 
+- Repo of built out collections. REF: https://www.postman.com/explore   
+- *Learning source.  REF: https://www.postman.com/webinars/  
+- Store Your Twilio Credentials Securely.  REF: https://www.twilio.com/docs/usage/secure-credentials 
+
+
+--------------------------------------------------
+#  Using Helper Libraries (JavaScript)  
+
+- **SDK:- Also called 'helper library'. It allows to interact with their product in your native language (like python).
+	It abstracts away the REST API completly.
+- 'HTTP requests' are all we need to interact with rest API. All languages come with way of making them requests. 
+	- It does normally requires a bunch of boilerplate code. SDKs help with this. 
+- check out twilio JavaScript helper library. 
+- code for Node.js (JavaScript) using SDK to run an api call to twilio for retrieving last message. 
+
+
+
+
+-----------------------------------------------------------
+# Using Helper Libraries (Python)
+
+- twilio Python helper library. 
+- python uses the concept of virtual environments.
+-  
+
+
+
+-------------------------------------------------------
+# Introducing the project
+
+- app on glitch.  REF: https://glitch.com/ 
+- 
+
+
+
+---------------------------------------------------
+# Flask App
+
+- Flask is a web framework. 
+- Flask provides an API that lets you extend the framework to create your application. 
+
+- get starter code from notes. 
+
+- on glitch.com :  choose 'new project', choose 'clone from git repo', paste the github repo link (flask one). 
+- website sometimes doesn't load proper, so just try a couple of times and the project will load with dirs and codes. 
+- not really need to sign in on glitch.com 
+- 'tools' at the bottom left have logs. 
+- get in "app.py", that's our program. 
+
+- flask works by creating an 'object' called app. {app = flask(__name__)}
+- then we can put different routes in there {@app.route("/<route_name>}
+
+- start with building the send_message() function, which is called by add_compliment(). 
+- "send text msg using rest api". either use python HTTP client, or use the helper library (SDK).  
+
+- go to tools (left bottom) > logs > console.   => gets you a terminal running. 
+- run "source ./.venv/bin/activate"     :-  to activate a python virtual environment. 
+- "pip install twilio"  - in this environment. 
+- add twilio library to the requirements file:   
+   - show all packages installed:  "pip freeze"
+   - store its output in file:  "pip freeze > requirements.txt" 
+- do a "refresh" in console to see the changes. 
+- 
+
+
+
+
+---------------------------------------
+#  Dealing with API Limits  
+
+- read the error messages carefuly. 
+	Most APIs guide on how to deal with their limits. 
+
+
+
+
+
+------------------------------------------
+# JavaScript Single Page Application (spa)
+
+- full stack Js app.
+	- server in node.js and framework-express and front-end in framework-vue.js
+
+ 
+
+
+-------------------------------------------
+# Moar JavaScript and Recap
+
+- what we build here s not exactly RESTful API. don;t follow all the constraints listed in the earlier sections. 
+- 
+
+
+
+
+---------------------------------------
+# Review
+
+
+
+
+
+=============================================================================================================
+=============================================================================================================
+
+
+
+
+
+
+
+
+
+============================================================================
+
+
+## LEFT: 
+=========
+
+course:  https://youtu.be/rtWH70_MMHM 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

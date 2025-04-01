@@ -1,0 +1,118 @@
+
+
+
+NLP:
+
+
+
+
+
+NLP :    1) spaCy,  2) Gensim / Word2Vec,  
+
+WORD EMBEDDING- numeric representation of words. 
+
+Word Embedding Approaches:    1)  bag of words;   2) Tf-IDF Scheme;    3) Word2Vec  
+
+
+ -- BAG OF WORDS maintain "no context". N-grams help with relatioship between words. but size of feature set grows exponentially.
+ 
+
+ -- TF-IDF: Term frequency refers to the number of times a word appears in the document. IDF refers to the log of the total 
+	number of documents divided by the number of documents in which the word exists.
+
+
+ -- Word2Vec: approach uses deep learning and neural networks-based techniques. 
+	semantically similar vectors are close to each other in N-dimensional space, where N refers to the dimensions of the vector. 
+	Word2Vec retains the semantic meaning of different words in a document. The context information is not lost.
+
+
+ --  WORD2VEC implementation REF:   https://stackabuse.com/implementing-word2vec-with-gensim-library-in-python/  ,
+					https://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.YEFakGhKguV 
+
+
+
+
+
+
+
+-------------------------------------------------------
+
+## DONE: 
+=========
+
+
+Different Approaches to INFORMATION EXTRACTION: 1) Rule-Based Approach;  2) Supervised Machine Learning Approach; and 3) Semi-supervised Approach
+
+
+ - Semantic search-Lucidworks:   REF:   https://youtu.be/4fMZnunTRF8  
+
+
+ - Rule-based Matching and 
+   Subtree Matching for Relation Extraction -   REF: https://www.analyticsvidhya.com/blog/2019/09/introduction-information-extraction-python-spacy/ 
+ 
+
+ - Computational Linguistics and 
+   Dependency Trees -        REF: https://www.analyticsvidhya.com/blog/2017/12/introduction-computational-linguistics-dependency-trees/?utm_source=blog&utm_medium=introduction-information-extraction-python-spacy 
+	# Use Cases: 1) Named Entitiy recognition;   2) Coreference Resolution or Anaphora Resolution;  3) Question Answering
+   
+
+
+#* Nice points:  file:///C:/Users/Nitin%20Kumar/Downloads/how-to-build-a-semantic-search-system-181105062957.pdf  
+
+
+#* NLP frameworks tutorials links list -  : REF: https://www.analyticsvidhya.com/blog/2019/08/complete-list-important-frameworks-nlp/?utm_source=blog&utm_medium=introduction-information-extraction-python-spacy  
+
+
+
+---------------------------------------------------------------------------
+
+word2vec: 
+
+   https://youtu.be/Z1VsHYcNXDI 
+   https://youtu.be/UqRCEmrv1gQ 
+   
+   https://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.YDk4AOhKguU 
+   https://stackabuse.com/implementing-word2vec-with-gensim-library-in-python/     { *Nice one } 
+
+
+
+
+----------------------------------------------------------------
+
+
+NLP PAPERS: 
+https://nlp.stanford.edu/software/dependencies_manual.pdf
+https://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14741/14133
+https://nlp.stanford.edu/pubs/joint-parse-ner.pdf
+Dependency resoluiton  -  https://www.aclweb.org/anthology/C10-1068/  
+
+
+
+
+------------------------------------------------------
+
+spacy: 
+
+
+
+
+spacy word vector approach:   REF: 
+
+
+
+
+
+word vector    (word to vec)
+
+
+bing DL search:   - https://blogs.bing.com/search-quality-insights/May-2018/Towards-More-Intelligent-Search-Deep-Learning-for-Query-Semantics 
+
+
+
+
+
+
+
+
+
+ 

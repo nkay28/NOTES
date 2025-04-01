@@ -1,0 +1,91 @@
+
+
+
+REF (good one):  https://aws.amazon.com/blogs/compute/task-networking-in-aws-fargate/  
+
+
+Sample Cloud Formation Templates: https://github.com/awslabs/aws-cloudformation-templates/tree/master/aws/services/ECS  
+
+
+
+
+
+*# Container/internal (Local) Networking:- 
+
+* LOCAL LOOPBACK INTERFACE:  If you are running these two components as two processes on a single EC2 instance, the web tier application 
+	process could communicate with the API process on the same machine by using the local loopback interface. The local loopback 
+	interface has a special IP address of 127.0.0.1 and hostname of localhost. 
+
+
+* FARGATE: uses AWSVPC, which gives all the containers in a task a shared elastic network interface to use for communication.
+
+
+----------------------------------
+
+
+*# External Networking:- 
+
+
+* By default, the cluster creation wizard creates a new VPC with two subnets in different Availability Zones, and a security group 
+	open to the internet on port 80.
+
+* A VPC is a fundamental tool in AWS for controlling the networking capabilities of resources that you launch on your account. 
+	Configuring external networking for a task is done by modifying the settings of the VPC in which you launch your tasks.
+
+* SUBNETS, which are logical groups that your resources can be placed into. Each subnet has an Availability Zone and its own 
+	route table, which defines rules about how network traffic operates for that subnet. 
+	There are two main types of subnets: public and private.
+
+
+* A PUBLIC Subnet is a subnet that has an associated internet gateway. Fargate tasks in that subnet are assigned both private and public IP addresses.
+* A browser or other client on the internet can send network traffic to the task via the internet gateway using its public IP address. 
+	The tasks can also send network traffic to other servers on the internet because the route table can route traffic out via the 
+	internet gateway.
+
+* A PRIVATE subnet does not have direct internet access. The Fargate tasks inside the subnet don’t have public IP addresses, only 
+	private IP addresses. Instead of an internet gateway, a network address translation (NAT) gateway is attached to the subnet.
+* There is no way for another server or client on the internet to reach your tasks directly, because they don’t even have an 
+	address or a direct route to reach them.
+
+* If you run a Fargate task in a private subnet, you must add this NAT gateway. Otherwise, Fargate can’t make a network request to 
+	Amazon ECR to download the container image, or communicate with Amazon CloudWatch to store container metrics.
+
+
+** The IAM role you use must have the AmazonEC2ContainerServiceforEC2Role managed policy attached to it.
+  If you do not launch your container instance with the proper IAM permissions, your Amazon ECS agent does not connect to your cluster.
+
+
+
+
+-------------------------------------
+
+
+*# LOAD BALANCERS: 
+
+
+* If you are running a container that is hosting internet content in a private subnet, you need a way for traffic from the public to 
+	reach the container. This is generally accomplished by using a load balancer such as an Application Load Balancer or a Network 
+	Load Balancer.
+
+* In ECS, when each task starts, the IP address of its elastic network interface is added to the load balancer’s configuration. When the 
+	task is being shut down, network traffic is safely drained from the task before removal from the load balancer.
+
+* To get INTERNET Traffic to containers using a load balancer, the load balancer is placed into a PUBLIC Subnet. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

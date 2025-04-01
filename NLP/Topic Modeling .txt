@@ -1,0 +1,55 @@
+
+
+one method to do TM is: uses a "Latent Dirichlet Allocation" (LDA). Another one is "TextRank". 
+ 
+TM: like a method for finding a group of words (i.e topic) from a collection of documents that best represents the information in 
+	the collection. It can also be thought of as a form of text mining – a way to obtain recurring patterns of words in textual 
+	material.
+
+TextRank process: a graph-based algorithm to extract relevant key phrases.
+--------
+
+TM: to examine the content of a collection of documents to determine common themes.
+It examines each document to determine the context and meaning of a word. The set of words that frequently belong to the same 
+	context across the entire document set make up a topic.
+“topic” consists of a cluster of words that frequently occur together. Using contextual clues, topic models can connect 
+	words with similar meanings and distinguish between uses of words with multiple meanings.
+
+A word is associated to a topic in a document based on how prevalent that topic is in a document and how much affinity the topic 
+	has to the word. The same word can be associated with different topics in different documents based on the topic distribution 
+	in a particular document.
+
+Each word associated with a topic is given a weight that indicates how much the word helps define the topic. The weight is an indication 
+	of how many times the word occurs in the topic compared to other words in the topic, across the entire document set.
+
+
+
+You should use at least 1,000 documents in each topic modeling job. Each document should be at least 3 sentences long.
+Documents can be in UTF-8 formatted text files. can detect up to 100 topics in a collection. 
+
+
+TM helps in:
+- Discovering hidden topical patterns that are present across the collection
+- Annotating documents according to these topics
+- Using these annotations to organize, search and summarize texts
+
+
+LDA:
+In the LDA model, each document is viewed as a mixture of topics that are present in the corpus. The model proposes that each word 
+	in the document is attributable to one of the document’s topics.
+LDA treats each document as a mixture of topics, and each topic as a mixture of words.
+LDA is a bag-of-words model. 
+
+
+TextRank:
+Graph-based ranking algorithms are a way of deciding the importance of a vertex within a graph, based on the information 
+	derived from the entire graph. The basic idea, implemented by a graph-based ranking model, is that of “voting”.
+
+
+Topic Modeling vs Topic Classification
+-------------------------------------
+TC is supervised and delivers neatly packaged topics, with labels such as Price, and Features, eliminating any guesswork. 
+
+
+
+

@@ -1,0 +1,33 @@
+
+
+## spacy:
+===========
+
+
+
+implemented pageS: 
+
+
+-  https://towardsdatascience.com/natural-language-processing-document-search-using-spacy-and-python-820acdf604af  
+
+
+
+
+
+
+resources: 
+
+
+
+
+
+referenceS: 
+
+
+
+
+
+
+=========================================================
+
+

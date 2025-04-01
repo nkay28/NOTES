@@ -1,0 +1,25 @@
+
+
+### TO READ: 
+-------------
+
+** Module 3: Querying and Global Secondary Indexes
+https://aws.amazon.com/tutorials/create-manage-nonrelational-database-dynamodb/module-3/
+
+DynamoDB 101 : An introduction to DynamoDB | by Abhirup Acharya | Medium
+https://medium.com/@abhirup.acharya009/dynamodb-101-an-introduction-to-dynamodb-2082313527ba
+
+DynamoDB 102 : DynamoDB Basics. Architectural deep dive of DynamoDB… | by Abhirup Acharya | Medium
+https://medium.com/@abhirup.acharya009/dynamodb-102-dynamodb-basics-4f10659422af
+
+AWS Gurus, Battle Tested Processes, On Your Team | Trek10 - From relational DB to single DynamoDB table: a step-by-step exploration 
+https://www.trek10.com/blog/dynamodb-single-table-relational-modeling/
+
+
+
+
+
+## Ref: 
+-------
+What is a Key Value Database? - Key Value DB and Pairs Explained - AWS
+https://aws.amazon.com/nosql/key-value/

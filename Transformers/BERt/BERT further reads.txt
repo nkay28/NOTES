@@ -1,0 +1,14 @@
+
+
+
+https://www.curiousily.com/posts/deploy-bert-for-sentiment-analysis-as-rest-api-using-pytorch-transformers-by-hugging-face-and-fastapi/
+
+https://mccormickml.com/2019/07/22/BERT-fine-tuning/
+
+http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/
+
+https://openreview.net/forum?id=SklnVAEFDB * 
+
+https://skimai.com/fine-tuning-bert-for-sentiment-analysis/  *
+
+

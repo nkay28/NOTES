@@ -1,0 +1,41 @@
+
+
+
+
+#** Tool/Library Options: 
+	- Stanford Named Entity Recognizer (SNER): {JAVA tool}  provides pre-trained models for extracting person, 
+		organization, location, and other entities
+	- SpaCy: It has an excellent statistical system that you can use to build customized NER extractors.
+		NER trained on the OntoNotes 5 corpus. 
+	- Natural Language Toolkit (NLTK): widely used. NLKT has its own classifier to recognize named entities 
+		called ne_chunk, but also provides a wrapper to use the Stanford NER tagger in Python. 
+
+
+
+Some use cases: REF: https://monkeylearn.com/blog/named-entity-recognition/ 
+	- Categorize Tickets in Customer Support 
+	- Gain Insights from Customer Feedback 
+	- Content Recommendation 
+	- Process Resumes 
+	- use NER to generate frequency list of each name in text: 
+		REF: https://www.kdnuggets.com/2018/08/named-entity-recognition-practitioners-guide-nlp-4.html 
+
+
+
+
+
+
+
+
+--------------
+
+
+text processing, 
+doc parser:  
+pdf parser. 
+get headings, 
+get paragraphs,
+
+
+
+

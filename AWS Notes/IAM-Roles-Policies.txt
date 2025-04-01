@@ -1,0 +1,48 @@
+
+
+
+## Task Roles and attaching policies & IAM: 
+===========================================
+
+
+
+create IAM policy  
+create IAM role
+Attach policies
+
+
+POLICY:  a collection of different permissions. 
+POLICY: A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. AWS evaluates these policies when an IAM principal (user or role) makes 
+	a request. Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in AWS as JSON documents. AWS supports six types of policies: 
+	identity-based policies, resource-based policies, permissions boundaries, Organizations SCPs, ACLs, and session policies.
+
+
+ROLE: give permission or authorization to AWS service to call other aws/API services, or take action of other aws services.   
+
+* IAM user and application level users are different. IAM user will not be used to login to an EC2 machine OS, or connect to RDS or do SQL query. IAM operates on AWS.    
+	with IAM we can call different aws API, login to management conslode and do actions there. 
+
+
+- REF: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html
+
+
+- managed policies with rights with configuration examples:-  REF: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html 
+
+
+- Policies and permissions in IAM:-  REF: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html 
+
+
+- Creating IAM policies:   https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html 
+
+- Editing IAM policies:  https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html 
+
+- Video  Ref: https://youtu.be/DXNS-EP9sXM?list=PLTyrc6mz8dg9x_rvi1AJxSGNo7BTUz6jB   ,  https://youtu.be/z9MOPMxnCjY?list=PLTyrc6mz8dg9x_rvi1AJxSGNo7BTUz6jB 
+
+
+
+
+    
+
+
+
+

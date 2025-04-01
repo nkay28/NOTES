@@ -1,0 +1,37 @@
+
+
+
+### NOTES: 
+============
+
+** SERVICE:  to automate/schedule the re-run of tasks in case they fail or crash. 
+
+** for dynamic port mapping on instance, Adjust security group of Instance so that ALB can send traffic to multiple needed ports (of instance). ie. edit inbound rules on SG. 
+	OR can do 'all TCP' instead of HTTP  in type and in souce put the name of the Security Group from ALB. 
+ 
+
+
+
+
+
+
+
+=================================================================================
+
+Left to Do:
+--------------- 
+
+dynamic port mapping / Services - run multiple servers on same instance machine at different ports.   Ref: https://youtu.be/lCWy1sXU79E?list=PLTyrc6mz8dg_tg1o1Calg8TOTuXclrGg4 
+
+Auto Scaling-  
+
+security groups -     https://youtu.be/k5yvD4ykPcI?list=PLTyrc6mz8dg8grU1HEhVw4zoCyvAl5MBO   , and others
+
+VPC  - 
+
+networking concepts(Bastion host)  - 
+
+Key forwarding /  Bastion Host - 
+
+
+

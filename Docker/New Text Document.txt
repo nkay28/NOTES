@@ -1,0 +1,31 @@
+
+
+
+https://medium.com/@JinnaBalu/elasticsearch-on-docker-b7854f116062
+
+https://devopsheaven.com/docker/docker-compose/volumes/2018/01/16/volumes-in-docker-compose.html
+
+https://docs.docker.com/engine/reference/builder/#expose
+** The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. EXPOSE 
+does not make the ports of the container accessible to the host.
+
+
+* Docker-machine : not anymore included.  -Ref: https://github.com/docker/for-win/issues/5981 
+
+ 
+Learning Ref:  https://github.com/willitscale/learning-docker 
+
+ 
+
+" docker system df " : Ref: https://docs.docker.com/engine/reference/commandline/system_df/ 
+
+
+
+"""
+Volume issues. Mount host volume on compose: 
+-v - “ docker run -v dir_on_docker_host : dir_inside_docker_container docker_container ”  
+"""
+
+
+REF:  shebang - https://stackoverflow.com/questions/34549859/run-a-script-in-dockerfile 
+

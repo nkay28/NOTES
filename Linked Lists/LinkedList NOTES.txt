@@ -1,0 +1,58 @@
+
+
+LINKEDLIST    
+----------
+
+- They are linear data structures, which means that there is a sequence and an order to how they are constructed and traversed. 
+- Linked lists can be used to implement (spoiler alert!) queues or stacks as well as graphs. 
+- Arrays are 'static data structures', while linked lists are 'dynamic data structures'.
+- A 'static data structure' needs all of its resources to be allocated when the structure is created. 'Dynamic data structure' can 
+	shrink and grow in memory. 
+
+# Queue: uses a First-In/First-Out (FIFO) approach. That means that the first element inserted in the list is the first one to be retrieved.  
+# Stack: uses a Last-In/Fist-Out (LIFO) approach, meaning that the last element inserted in the list is the first to be retrieved.  
+telle
+- Because of the way you insert and retrieve elements from the edges of queues and stacks, linked lists are one of the most convenient ways to 
+	implement these data structures
+
+
+# Graphs: Graphs can be used to show relationships between objects or to represent different types of networks. 
+	eg: a directed acyclic graph (DAG).   
+
+There are different ways to implement graphs like the above, but one of the most common is to use an Adjacency List. 
+An Adjacency List is:, in essence, a list of linked lists where each vertex of the graph is stored alongside a collection of connected vertices.
+The adjacency list could also be represented in code using a dict. 
+
+In terms of both speed and memory, implementing graphs using adjacency lists is very efficient in comparison with, for example, an adjacency matrix.
+
+
+- Linked lists are straightforward for insertion and deletion of elements at the beginning or end of a list, where their time complexity \
+	is always constant: O(1).
+* Linked lists have a performance advantage over normal lists when implementing a queue (FIFO), in which elements are continuously inserted and 
+	removed at the beginning of the list.
+* When it comes to element lookup, lists perform much better than linked lists.
+
+ 
+## collections.deque: 
+----------------------
+In Python, there’s a specific object in the collections module that you can use for linked lists called deque (pronounced “deck”), which 
+	stands for double-ended queue.
+collections.deque uses an implementation of a linked list in which you can access, insert, or remove elements from the beginning or 
+	end of a list with constant O(1) performance.
+
+#** " __repr__ " : is a special method used to represent a class's objects as a string. __repr__ is called by the repr() built-in function. 
+	You can define your own string representation of your class objects using the __repr__ method. Special methods are a set of predefined 
+	methods used to enrich your classes.
+
+
+
+STACK and QUEUE
+
+
+
+
+
+
+
+
+

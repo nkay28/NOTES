@@ -1,0 +1,90 @@
+
+
+Models are the output of an algorithm run on data, including the procedures used to make predictions on data. 
+
+A Language model is a numerical model of the probability of words, sentences, or phrases. 
+
+
+* Masking involves removing parts of sentences and having the model fill in the gaps.  They are one of the ways contextual embedding is done. 
+  
+
+Transformers: 
+ based on "self-attention", which is learning to weigh the relationship between each item or word in an input sequence to other words in the input sequence.
+
+* BERT is a self-supervised learning algorithm. 
+
+
+BERT NLP Model Architecture:
+- uses the sequence-to-sequence model with an encoder and a decoder. 
+- The encoder turns the input into embedding, and the decoder turns the embedding into string output.
+- BERT architecture has a different structure than the original Transformer. Depending on the use case, it stacks encoders on each other (12 base or 24 large encoders).
+
+output embeddings will look like this:- " [CLS] Her dog is cute. He can be annoying sometimes [SEP] " 
+
+[CLS] is a token used to represent the 'classification' of specific inputs. You can use this to train models in supervised learning because you can know the value. 
+An example is using 1 to represent a Home win and 0 to represent an away win in sports analytics. In the tokens, CLS is represented by 101.
+
+[SEP] is also a unique token used at the end of input. This is used for separating sentences. In the tokens, SEP is represented by 102. 
+A common way the BERT architecture is also used is to continue the picture above. 
+Here, the feedback from the classifier goes back into the transformer with updated weights and embeddings.
+
+
+## BERT was trained on two modeling methods: 
+
+MASKED LANGUAGE MODEL (MLM):
+* Masking involves removing parts of sentences and having the model fill in the gaps.  They are one of the ways contextual embedding is done. 
+In MLM, a certain percentage of the corpus is hidden or masked and trained. BERT is given a group of words or sentences, and the contextual weights are maximized to output the sentence on the other side. 
+An incomplete sentence is inputted into BERT, and an output is received in the easiest terms. 
+In practice, 15% of words in a sentence or text corpus are masked to optimize the output result. 
+
+Sample sentence: " In a year, there are [MASK] months in which [MASK] is the first. " 
+The [MASKS] keywords in the sentence above represent masked words. 
+It is a form of Fill in the gaps (as used in schools for setting questions used in tests/questionnaires.)
+
+
+NEXT SENTENCE PREDICTION (NSP):
+While MLM is training the relationship between words, next sentence prediction (NSP) tries to create a long-term relationship between sentences. 
+* The original BERT NLP paper by Google mentioned that the model performed poorly across each measured metric when NSP was not used. 
+NSP involves giving BERT two sentences, sentence 1 and sentence 2. 
+Then, BERT is asked the question: “HEY BERT, DOES SENTENCE 1 COME AFTER SENTENCE 2?” --- and BERT replies with isNextSentence or NotNextSentence.
+* Training BERT with NSP after MLM makes it understandable to a reasonable extent the linguistic connotations and properties of the language to a good extent. 
+
+
+* Type of Tokenizer Used: The WordPiece tokenizer must be used when using BERT. You have to use the same kind of tokenizer originally used to train BERT to train your model.
+* Training BERT Model from Scratch. Use pre-trained models instead of training new models when using BERT. This is very expensive and it is not advisable to do so.
+* Task Specific Problems. For some tasks, when fine-tuning, the results from the runs will not converge (also known as degeneration). 
+	This usually depends on the tasks, and it is advised to be aggressive with early stopping when fine-tuning it yourself.
+
+
+## BART Vs. BERT NLP: 
+---------------------
+BERT - Bidirectional Encoder Representations from Transformers. Suited for text classification tasks. Architecture consists of a bidirectional encoder. 
+BART - Bidirectional Auto-Regressive Transformers. Suited for 'text-generation tasks'. architecture consists of a combination of a bidirectional encoder and an autoregressive decoder. 
+
+
+## ELMo Vs. BERT NLP:
+---------------------
+ELMo - Embeddings from language model. Uses right-to-left and left-to-right LSTMs. core of this model is based on Long Short Term Memory Networks (LSTMs). 
+	* Input to this model is 'characters and not words'.*   
+BERT - deeply bidirectional because of the underlying masked language modeling technique on which it is built.  tokenizes words into sub-words, which serve as input to the model. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

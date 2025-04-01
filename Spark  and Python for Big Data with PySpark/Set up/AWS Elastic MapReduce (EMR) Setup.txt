@@ -1,0 +1,83 @@
+
+
+EMR
+
+** Used To setup a cluster with a Notebook Interface. 
+===================================================
+
+
+(Apache) Zeppelin notebook: new enviro that mimics Jupyter Notebook's capabilities, but specifically for Big Data in mind. 
+---------------------------
+
+
+security settings  docs: ? 
+
+
+REF Link: zeppelin.apache.org  
+
+
+pick software config on aws console:  the one with spark and Zeppelin. 
+
+Create/Grab your "EC2 key pair". 
+
+
+** AWS has instructions on how to handle the pem keypair file and make it work. (includes make ppk file for putty on windows) 
+** AWS EMR has a step by step guide for all ofd this key setup. 
+
+###
+# manage/change security settings for EMR cluster:  go into 'security groups for Master' on the cluster main page:   
+ - select the SG with 'master' in name and go to the 'inbound' tab attributes at the bottom. click 'edit' to open ports.  
+ - click 'add rule', select 'SSH' in type from dropdown. port as 22. in source: 'anywhere' or 'my IP'. *'My IP' is the most secure.    
+ - anopther 'add rule', 'Custom TCP rule' type. port as 8890. in source: 'my IP'.  'SAVE' it to finish. 
+SG are ready to go now. 
+ 
+
+for Default interpreter: choose "spark" (and then pyspark in the notebook) => by typing " %pyspark " in the first cell to write python code.  
+otherwise it will expect scala, as spark is written in scala. 
+then the %pyspark comes on top of each cell by default. 
+
+
+the zeppelin notebook creates a sequel context ready for use.  Just type " sc " in a cell. (creates spark 'context' object). 
+
+the course uses spark "sessions" not "context'. new spark versions off of sessions. just type " spark " instead of " sc ". 
+
+don;t ever overwrite " spark ". its a special var already setup . 
+
+** Example grab data from S3:  " df = spark.read.csv("s3n://<myaccesskey>:<secretkey>@<bucketname>/<filename>.csv") "  (pass in the key for bucket connection.) 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+

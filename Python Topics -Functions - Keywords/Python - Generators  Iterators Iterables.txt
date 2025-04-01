@@ -1,0 +1,27 @@
+
+
+
+https://rare-technologies.com/data-streaming-in-python-generators-iterators-iterables/
+
+
+https://www.geeksforgeeks.org/iterators-in-python/
+
+
+https://stackoverflow.com/questions/63459657/how-to-load-large-dataset-to-gensim-word2vec-model
+
+
+
+
+
+
+
+difference between the 2. Do multiple iterations over a iterator. (without creating a list).  
+https://stackoverflow.com/questions/63459657/how-to-load-large-dataset-to-gensim-word2vec-model 		
+Maybe ask new or figure out.  Can I call the word2vec train multiple times on a iterator. And still train the same model. 		
+Make sure generator list of data is available for multiple iterations for the word2vec training. How?   
+
+
+
+
+
+

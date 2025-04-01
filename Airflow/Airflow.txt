@@ -1,0 +1,25 @@
+
+
+
+** The whole DAG is defined as a python script(?) 
+ 
+
+What is Airflow™? — Airflow Documentation
+https://airflow.apache.org/docs/apache-airflow/stable/
+
+
+INSTALL Airflow: 
+How to Run Different Executors on Apache Airflow | Qubole
+https://www.qubole.com/tech-blog/how-to-install-apache-airflow-to-run-different-executors 
+
+
+DAG: 
+karolina-sowinska/free-data-engineering-course-for-beginners: Learn the entire ETL process based on Spotify API data
+https://github.com/karolina-sowinska/free-data-engineering-course-for-beginners/tree/master
+
+
+Airflow for Beginners - Run Spotify ETL Job in 15 minutes! - YouTube
+https://www.youtube.com/watch?v=i25ttd32-eo
+
+
+

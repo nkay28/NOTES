@@ -1,0 +1,208 @@
+
+
+* 
+DIFFERENCE: differences between EBS and EFS is that EBS is only accessible from a single EC2 instance in your particular AWS region, while 
+	EFS allows you to mount the file system across multiple regions and instances.
+
+Comparision - REF: https://www.missioncloud.com/blog/resource-amazon-ebs-vs-efs-vs-s3-picking-the-best-aws-storage-option-for-your-business
+
+
+
+
+
+## EBS:  Elastic Block Store: 
+=============================
+
+Ref Video: https://youtu.be/HTefwhNticU?list=PLTyrc6mz8dg8grU1HEhVw4zoCyvAl5MBO 
+
+aws Video Ref:  https://www.aws.training/Details/Video?id=16445  
+
+
+*  EBS attachment to container (on ECS):- REF: https://appfleet.com/blog/how-to-attach-a-volume-to-a-docker-container-in-aws-ecs/ 
+ 
+
+* root volume mount location is important. Should be attached at: Linux- "/dev/xvda". Windows- "/dev/sda1" 
+
+* Right click on instance and click "Create Snapshot". 
+
+* Volume SNAPSHOT: a point in time backup of the EBS volume.  
+	incremental:  only capture the new blocks. 
+	Snapshot stores in S3.
+
+* create Volume in availability zone where the instance is. 
+
+* Change vol size-Old way:  stop instance, detach older volume, attach new volume (already created), make it root volume (specify path), start the instance.  
+
+** Change vol size-New way: Elastic EBS volume:  => Volumes can be resized without snapshot. 
+	rightclick >Modify volume >change type or size >confirm. 
+	May have to log into OS and maybe increase partition size.
+
+* After adding a volume to instance, can ssh into instance from cmd using the ssh command from instance.
+	can see the block storage devices attached on the instance by: " lsblk "   (on mac)
+	can create a file system on the storage as root user by: " sudo mke2fs /dev/xvdb "
+	then can mount that volume into a folder on the linux instance. 
+	to mount on linux from root user: "sudo mount /dev/xvdb /mnt " # " sudo mount <the_mount_point> <folder_to_mount_the_volume> "
+	--now the volume mounted o the /mnt folder.   
+	To unmount: " unmount /mnt"
+* For windows: will need to go on disk management. create file system and mount from there. 
+
+
+* Detached volue stay in'available' state.
+
+* one volume can be detached and attached to different instances in the same Availabiltiy zone.
+
+
+
+-----------------------------------------------
+
+
+
+
+## EFS:
+==================== 
+
+EFS FULL USER GUIDE DOC: https://docs.aws.amazon.com/efs/index.html 
+
+
+REF:  https://docs.aws.amazon.com/AmazonECS/latest/userguide/efs-volumes.html
+REF:  https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html 
+
+How to use - REF:  https://docs.aws.amazon.com/AmazonECS/latest/developerguide/tutorial-efs-volumes.html  
+   
+Aws course REF:  https://www.aws.training/Details/Video?id=60582 
+	--course is very helpful and has lots of good references and how to s in it.
+
+
+* Supported for both EC2 and FARGATE Tasks. 
+
+** You can share Amazon EFS file systems among multiple Amazon EC2 instances, even if the instances are in different Availability Zones 
+	provided that they are within the same region as the file system.
+
+** To access your Amazon EFS file system in a VPC, you create one or more mount targets in the VPC. You can create one mount target in 
+	each Availability Zone in a region.
+
+** General Purpose is the default performance mode and is best suited for most workloads. The Max I/O performance mode is recommended for 
+	workloads that must scale to higher levels of aggregate throughput and operations.
+
+** AWS Backup is a fully managed backup service that makes it easy to centrally manage and automate backups of your Amazon EFS file systems. 
+	Using AWS Backup, you can centrally configure and audit AWS resources, automate backup scheduling, set retention policies, and 
+	monitor backup activity.
+
+* must configure your container instance AMI to mount the Amazon EFS file system before the Docker daemon starts.  
+
+ * task definitions must reference volume mounts on the container instance to use the file system. 
+
+* With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files.
+
+* By default, the cluster creation wizard creates a new VPC with two subnets in different Availability Zones, and a security 
+	group open to the internet on port 80.
+
+** The IAM role you use must have the "AmazonEC2ContainerServiceforEC2Role" managed policy attached to it.
+  If you do not launch your container instance with the proper IAM permissions, your Amazon ECS agent does not connect to your cluster.
+
+* Automatic backups are enabled by default in EFS creation settings.  
+* Encryption enables by default as well.
+
+
+* subnet IDs in each zone need to match those of the EC2 instance subnet ids, While creating mount target in each availability 
+	zone in vpc during EFS creation. 
+
+* File System policy allows to control API access and NFS client access to the EFS.
+
+** Amazon EFS ACCESS POINTS: is a feature that simplifies providing applications access to shared data sets in an Amazon EFS file system. 
+	Use Amazon EFS Access Points together with AWS IAM to enforce an operating system user and group, and a directory for every file 
+	system request made through the access point.
+	REF: https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html 
+	REF: https://aws.amazon.com/about-aws/whats-new/2020/01/amazon-elastic-file-system-introduces-efs-access-points/ 
+
+  
+ 
+* Step by step Guide to create EFS: REF: https://aws.amazon.com/getting-started/tutorials/create-network-file-system/
+
+
+ #* CREATION STEPS: 
+------------------------
+
+-- Step 1: Create an Amazon ECS cluster
+-- Step 2: Create a security group for the Amazon EFS file system
+	* For Inbound rules, choose Add rule. For Type, choose NFS. For Source, choose Custom and then enter the security group ID that 
+	you identified earlier for your cluster. 
+-- Step 3: Create an Amazon EFS file system. 
+	* Under Create mount targets, for Security groups, add the security group that you created in step 2.
+	From the file systems details screen, record the File system ID. In the next step, you will reference this value in your Amazon ECS task definition.
+	* Create and add SG with port 2049 open.
+	* option to add file system policy.  
+-- Step 4: Add content to the Amazon EFS file system
+	* mount the Amazon EFS file system to an Amazon EC2 instance and add content to it. SSH to the Amazon EC2 instance you created.
+	run the df -T command to verify that the Amazon EFS file system is mounted. 
+-- Step 5: Create a task definition
+	* Choose Configure via JSON, copy and paste the following JSON text, replacing the fileSystemId with the ID of your Amazon EFS file system. 
+-- Step 6: Run a task and view the results.
+
+
+
+* USE CASES: Big data analytics, web, app dev and test, DB backups, Container Storage. 
+* AWS EFS Infrequent access service. 
+ 
+
+
+* To use Amazon EFS with Amazon ECS, add one or more volume definitions to an Amazon ECS task definition. A volume definition includes an 
+	Amazon EFS file system ID, Access Point ID, and the options to enable IAM authorization or TLS encryption in transit. Container 
+	definitions within the task definition can specify the task definition volumes that should be mounted when that container is run. 
+
+
+
+
+##* Connect a EFS file system to EC2 instance and mount it (**in AWS video**):  {pretty helpful video}
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------
+
+
+
+## S3
+======
+
+
+Amazon S3 is an object store good at storing vast numbers of backups or user files. Unlike EBS or EFS, S3 is not limited to EC2. Files 
+stored within an S3 bucket can be accessed programmatically or directly from services such as AWS CloudFront. This is why many websites 
+use it to hold their content and media files, which may be served efficiently from AWS CloudFront.
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

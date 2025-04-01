@@ -1,0 +1,34 @@
+
+
+## DOCKER BASIC COMMANDS: 
+
+
+# Create an image from Dockerfile in the current Dir:
+	"  docker build -t nihdemo1 . "
+
+
+# run a container from image:
+	"  docker run --name nihdemo1 -p 8080:5000 nihdemo1 "
+	** Port (docker) 5000 forwarded to port (local machine) 8080
+
+# Port forwading / which local port it opens at. 
+
+
+# remove a container: 
+	"  docker rm /nihdemo1 " 
+
+
+
+
+
+
+## Docker COMPOSE BASIC COMMANDS: 
+
+
+
+
+
+
+
+
+

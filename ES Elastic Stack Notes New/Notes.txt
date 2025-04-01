@@ -1,0 +1,22 @@
+
+
+
+
+Run Kibana alone and link to ES:  REF- https://www.elastic.co/guide/en/kibana/current/docker.html     {depricated?} 
+
+
+Run ES and Kibana together:  REF- https://blog.k2datascience.com/running-elasticsearch-kibana-using-docker-5ff10ad017d0 
+
+ 
+
+Run full Elastic Stack with Docker compose:  REF-  https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-docker.html  
+
+
+
+
+
+
+COMPLETED COURSE VIDEO: https://youtu.be/C3tlMqaNSaI  
+
+
+

@@ -1,0 +1,32 @@
+
+
+
+* its an API client. 
+
+* Its used to Develop, Test, Share, and Document APIs. 
+
+
+intro video:  https://youtu.be/juldrxDrSH0
+
+
+
+
+
+## LEFT: 
+=========
+
+full course: https://youtu.be/VywxIQ2ZXw4 
+
+Playlist:  https://www.youtube.com/playlist?list=PLhW3qG5bs-L-oT0GenwPLcJAPD_SiFK3C
+
+- writing automated tests in Postman
+
+- Maybe: Postman mock servers
+
+
+
+
+
+
+
+

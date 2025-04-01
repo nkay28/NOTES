@@ -1,0 +1,20 @@
+
+
+
+
+New bidirectional context models. 
+Can do Small data feed models, w/ transfer learning.  
+
+
+BERT can do -  “multi-task learning”
+
+BERT is the first unsupervised, deeply bidirectional system
+
+
+
+
+ULMFiT   -Detailed 
+Google's BERT or Transformer-XL   - detailed. 
+ELMo ? 
+ELMo application at TandT?
+

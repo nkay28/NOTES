@@ -1,0 +1,21 @@
+
+
+# main page:  https://docs.docker.com/docker-for-windows/wsl/
+
+
+# enable WSL 2 feature on windows:   https://docs.microsoft.com/en-us/windows/wsl/install-win10 
+
+
+# install windows terminal:  https://docs.microsoft.com/en-us/windows/terminal/get-started  
+
+
+# addition for step 3 of base:  (optional) : https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel  
+
+
+
+
+
+
+
+
+

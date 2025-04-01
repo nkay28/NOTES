@@ -1,0 +1,55 @@
+
+
+
+#** Gensim’s Word2Vec: you need to pass a list of tokenized sentences as the input to Word2Vec. However, you can actually pass in a whole review as a sentence 
+	(i.e. a much larger size of text), if you have a lot of data and it should not make much of a difference. In the end, all we are using the dataset for 
+	is to get all neighboring words (the context) for a given target word.
+
+#** The secret to getting Word2Vec really working for you is to have lots and lots of text data in the relevant domain.
+
+
+
+
+
+
+
+## REFERENCES:   ## handling large source data from box for word2vec: References: 
+==============
+- https://stackoverflow.com/questions/63459657/how-to-load-large-dataset-to-gensim-word2vec-model
+- https://rare-technologies.com/word2vec-tutorial/
+- https://stackoverflow.com/questions/34166369/generator-is-not-an-iterator
+- https://stackoverflow.com/questions/30573873/how-to-train-word2vec-on-very-large-datasets
+- Save a model: https://radimrehurek.com/gensim/models/word2vec.html 
+- Nice implementation run through:  https://rare-technologies.com/word2vec-tutorial/ 
+- whole implementation:  https://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.YGIS-q9KguX
+
+word2vec: 
+   https://youtu.be/Z1VsHYcNXDI 
+   https://youtu.be/UqRCEmrv1gQ    
+   https://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.YDk4AOhKguU 
+   https://stackabuse.com/implementing-word2vec-with-gensim-library-in-python/     { *Nice one } 
+
+
+
+
+-----------------------------------------------------
+
+
+## MODEL Notes: 
+==================
+
+- ** model accepts list of list of tokens, not 3layer nesting.	 => Flatten the sentence token List: one level. 
+
+
+Memory error bug:  large data. 
+	=> Workaround an iterator/generator.   
+
+TypeError: You can't pass a generator as the sentences argument. Try a sequence.
+	=> Pass an  object instead of the generator directly.  
+
+TypeError: unhashable type: 'list'
+	=> Flatten the list of list, to avoid 3layer nesting. Word2vec can handle up to ‘list of list of tokens’.  
+--probably have to do one doc at a time. In tokenization. 
+
+
+ 

@@ -1,0 +1,138 @@
+
+
+#REF: https://www.learnbyexample.org/ 
+
+
+
+- super()  Function: - will make the child class inherit all the methods and properties from its parent. You do not have to use the 
+	name of the parent element, it will automatically inherit the methods and properties from its parent.  
+
+
+- Constructor: primary use of a constructor is to declare and initialize data member/instance variables of a class. The constructor 
+	contains a collection of statements (i.e., instructions) that executes at the time of object creation to initialize the 
+	attributes of an object.
+- self: The first argument self (in constructor) refers to the current object. It binds the instance to the __init__() method.
+- Using self, we can access the instance variable and instance method of the object. The first argument 'self' refers to the current object. 
+
+*Python does NOT support 'constructor Overloading'. 
+
+
+##- 'Constructor Chaining': is the process of calling one constructor from another constructor. Constructor chaining is useful when you 
+	want to invoke multiple constructors, one after another, by initializing only one instance.
+	Constructor chaining is convenient when we are dealing with inheritance. When an instance of a child class is initialized, the 
+	constructors of all the parent classes are first invoked and then, in the end, the constructor of the child class is invoked. 
+	Using the super() method we can invoke the parent class constructor from a child class. 
+
+- To count the number of objects of a class, we can add a counter in the constructor, which increments by one after each object creation.
+
+- Return value: In Python, the constructor does not return any value. 
+-* The __init__() is required to return None. 
+
+
+
+IMP Note:
+- For every object, the constructor will be executed only once. For example, if we create four objects, the constructor is called four times.
+- In Python, every class has a constructor, but it’s not required to define it explicitly. Defining constructors in class is optional.
+- Python will provide a default constructor if no constructor is defined.
+
+
+
+
+Instance Variables.  and 'Class' Variables.
+
+
+
+Static Methods: 
+--------------
+- A static method is a general utility method that performs a task in isolation. 
+- A static method is bound to the class and not the object of the class. Therefore, we can call it using the class name. (also using object?) 
+- A static method doesn’t have access to the class and instance variables because it does not receive an implicit first 
+	argument like 'self' and 'cls'. Therefore it cannot modify the state of the object or class.
+- We must explicitly tell Python that it is a static method using the '@staticmethod' decorator or 'staticmethod()' function.
+- It is a utility method and doesn’t need an object (self parameter) to complete its operation.
+- We can call it from another method of a class. 
+- The method does not depend on the object’s state or the class state.
+- Can call a static method from another static method of the same class.
+- ADVANTAGEs: Consume Less memory (only one copy per class), To Write Utility functions, Readabiltity.  
+
+
+
+
+
+Polymorphism: 
+------------
+- Polymorphism is the ability of an object to take many forms. It allows us to perform the same action in many different ways.
+- In polymorphism, a method can process objects differently depending on the class type or data type.
+- e.g. - Polymorphism in Built-in function 'len()'. The len() method treats an object as per its class type. For strings, lists, etc. 
+- It is mainly used with inheritance. 
+- Using 'Method Overriding' polymorphism allows us to defines methods in the child class that have the same name as the methods in 
+	the parent class. This process of re-implementing the inherited method in the child class is known as 'Method Overriding'.
+- In polymorphism, Python first checks the object’s class type and executes the appropriate method when we call the method. 
+- can create polymorphism with a function that can take any object as a parameter and execute its method without checking its class type.
+- Polymorphism In Built-in Methods: 'reversed(obj)' returns the iterable by reversing the given object. For example, if you pass a 
+	string to it, it will reverse it. But if you pass a list of strings to it, it will return the iterable by reversing the order 
+	of elements (it will not reverse the individual string).
+-*'Method Overloading': process of calling the same method with different parameters. Python does NOT support method overloading. 
+- In Python, to overload the class method, we need to write the method’s logic so that different code executes inside the function 
+	depending on the parameter passes. eg - range() => range(5), range(5, 10), range(2, 12, 2), all give different results.
+- Operator Overloading in Python: means changing the default behavior of an operator depending on the operands (values) that we use. 
+	In other words, we can use the same operator for multiple purposes. eg - the + operator will perform an arithmetic addition 
+	operation when used with numbers. Likewise, it will perform concatenation when used with strings. 
+-*We can overload + operator to work with custom objects also. Python provides some special or magic function that is automatically 
+	invoked when associated with that particular operator. eg - when we use the + operator, the magic method __add__() is 
+	automatically invoked. Internally + operator is implemented by using __add__() method.
+	Internally * operator is implemented by using the __mul__() method.
+
+
+
+   
+
+
+
+
+Inheritance 
+
+
+
+
+
+
+
+------------------------------------
+
+#* Classes provide:  'separation of concerns', Decoupling, Implementation hiding, Encapsulation, Inheritance  
+
+
+#* As a rule of thumb, when you have a set of data with a specific structure and you want to perform specific methods on it, use a class.
+
+#* If you’re tempted to use global variables to access data, it might be easier to define a class and build a method to access each piece of data.
+
+
+##** When classes are a bad idea:
+	- Use heapq for heaps
+	- Consider using functools.partial()
+	- Classes “for the future”. instead leave comment: "# initiate a new class here if needed for purpose XY". 
+
+#* "There should only be one — and preferably only one — obvious way to do it”, says the Zen of Python (either classes or not). 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

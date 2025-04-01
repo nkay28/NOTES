@@ -1,0 +1,9 @@
+
+
+
+
+
+NAT vs ELB:  all the internet bound trafic from the private instances goes to the NAT gateway and the NAT gateway sends it out to the internet, gets 
+	the reply back and gives it to the private instances. [traffic towards internet BY the private machines goes via NAT ]
+	:The traffic originated from internet for private instances/web servers comes via ELB.
+

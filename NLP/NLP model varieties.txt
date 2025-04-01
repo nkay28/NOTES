@@ -1,0 +1,91 @@
+
+
+
+
+one way : -  
+
+Multi-Purpose NLP Models:
+-------------------------- 
+These models power the NLP applications we are excited about –  machine translation, question answering systems, chatbots, 
+sentiment analysis, etc. A core component of these multi-purpose NLP models is the concept of language modelling.
+In simple terms, the aim of a language model is to predict the next word or character in a sequence. 
+  
+ - ULMFiT
+ - Transformer
+ - Google’s BERT
+ - Google's Transformer-XL
+ - OpenAI’s GPT-2
+
+
+Word Embeddings: 
+----------------
+ - ELMo  (Embeddings from Language Models)  
+ - Flair
+
+
+
+Other Pretrained Models
+-----------------------
+ - StanfordNLP
+
+
+
+
+============================================================
+
+## Bi-grams (word2vec): 
+
+
+Mutual Information (MI): between two random variables X and Y is a measure of the dependence between X and Y
+Pointwise Mutual Information (PMI): is a measure of the dependence between a concrete occurrences of x of y.
+in some NLP tasks, keeping the stop-words yields better results. One should evaluate both approaches. 
+Genim has an implementation for phrases extraction, both with NPMI and the above data-driven approach of Mikolov et al.
+Normalized Pointwise Mutual Information (NPMI): a measure that can be compared between all bi-grams, choose only bi-grams 
+	above a certain threshold. We want the PMI measure to have a maximum value of 1 on perfectly correlated words x and y. 
+hyperparameters (for gensim - ): scoring - ‘default’ for data-driven approach and ‘npmi’ for NPMI. 
+
+
+ 
+
+=========================================================
+
+-*Both BOW and TF-IDF cannot capture the semantic meaning of words, because they represents words, or n-grams, in a discrete way.
+
+-*The "Distributional Hypothesis" is that words that occur in the same contexts tend to have similar meanings. It’s the basis for 
+	semantic analysis of text. The idea behind the hypothesis, is that we can learn words meaning by looking on the context they 
+	appear at. 
+
+
+BOW:  Bag-of-Words model builds a vocabulary from a corpus of documents and counts how many times the words appear in each document. 
+---	each word in the vocabulary becomes a feature and a document is represented by a vector with the same length of the 
+	vocabulary (a “bag of words”). use  the term frequency–inverse document frequency (or Tf–Idf) as better alternative. 
+
+Feature Selection, the process of selecting a subset of relevant variables. perform a Chi-Square test to determine whether a 
+	feature and the (binary) target are independent.
+	Keep only the features with a certain p-value from the Chi-Square test. 
+
+ 
+
+Word Embedding:  words of the same context usually appear together in the corpus, so they will be close in the vector space as well. 
+---------------
+can be done using 2 different approaches: starting from a single word to predict its context (Skip-gram) or starting from the 
+	context to predict a word (Continuous Bag-of-Words).
+
+
+Language Models:
+-----------------
+BERT 
+
+
+
+
+
+ ROC: a plot that illustrates the true positive rate against the false positive rate at various threshold settings. The area under 
+	the curve (AUC) indicates the probability that the classifier will rank a randomly chosen positive observation higher than 
+	a randomly chosen negative one.
+Explainability of these predictions. The lime package can help us to build an explainer
+Padding: 
+Recall: the percentage of texts the model predicted for each topic out of the total number of texts it should have predicted for 
+	that topic. 
+
+

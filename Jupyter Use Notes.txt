@@ -1,0 +1,55 @@
+
+
+
+* https://www.datacamp.com/community/tutorials/markdown-in-jupyter-notebook 
+
+https://medium.com/game-of-data/12-things-to-know-about-jupyter-notebook-markdown-3f6cef811707 
+
+
+
+https://medium.com/@ingeh/markdown-for-jupyter-notebooks-cheatsheet-386c05aeebed
+
+https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd
+
+
+
+very useful:  https://towardsdatascience.com/how-to-effortlessly-optimize-jupyter-notebooks-e864162a06ee
+quite useful:  https://towardsdatascience.com/jupyter-notebook-hints-1f26b08429ad 
+ 
+extensions: https://github.com/ipython/ipython/wiki/Extensions-Index 
+
+
+
+
+
+---------------------------------------------
+
+***TO SUPRESS HTTP HEADER response:    (in the cell) : " logging.getLogger().setLevel(logging.CRITICAL) " 
+	use logging in python for controlling the level of logs/header outputs in a Notebook cell. 
+	**The thing to note is that you must add the logging statement at the top of the particular cell you want to trim the output for. 
+	
+
+ 
+
+
+
+
+IMPORTANT: %%capture
+- IPython has a cell magic, " %%capture ", which captures the stdout/stderr of a cell. With this magic you can discard these streams or 
+	store them in a variable. By default, %%capture discards these streams. This is a simple way to suppress unwanted output.
+	Also, :- " %%capture cap --no-stderr " 
+	#*** Still prints Box API content. 
+
+
+CELL Output References: 
+-----------------------
+# this one doesn;t seem to work proper:
+- * Remove large output from Notebook from Commnadline:  
+	REF: https://stackoverflow.com/questions/28908319/how-to-clear-an-ipython-notebooks-output-in-all-cells-from-the-linux-terminal
+
+- Convert jupyter notebook to .py script: 
+	REF: https://stackoverflow.com/questions/37797709/convert-json-ipython-notebook-ipynb-to-py-file 
+
+
+
+ 
